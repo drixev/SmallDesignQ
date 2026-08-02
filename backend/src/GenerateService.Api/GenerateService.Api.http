@@ -1,6 +1,13 @@
-@GenerateService.Api_HostAddress = http://localhost:5030
+@GenerateService_Api_HostAddress = http://localhost:5030
 
-GET {{GenerateService.Api_HostAddress}}/weatherforecast/
+POST {{GenerateService_Api_HostAddress}}/api/generate?page=1&pageSize=10
 Accept: application/json
+Content-Type: application/json
+
+{
+    "input1":2,
+    "input2":3,
+    "sampleSize": 10
+}
 
 ###
