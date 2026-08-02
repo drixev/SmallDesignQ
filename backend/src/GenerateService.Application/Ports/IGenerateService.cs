@@ -4,5 +4,5 @@ namespace GenerateService.Application.Ports;
 
 public interface IGenerateService
 {
-    Task<IEnumerable<GenerateResponse>> GenerateSampleSize(GenerateRequest request);
+    Task<PagedResponse<GenerateResponse>> GenerateSampleSize(GenerateRequest request, int page, int pageSize);
 }

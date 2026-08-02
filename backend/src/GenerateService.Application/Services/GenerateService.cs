@@ -6,15 +6,26 @@ namespace GenerateService.Application.Services;
 
 public sealed class GenerateService : IGenerateService
 {
-    public Task<IEnumerable<GenerateResponse>> GenerateSampleSize(GenerateRequest request)
+    public Task<PagedResponse<GenerateResponse>> GenerateSampleSize(GenerateRequest request, int page, int pageSize)
     {
         var sample = Enumerable.Range(0, request.SampleSize + 1)
-            .Select(number => new GenerateResponse(number, GetResult(number, request.Input1, request.Input2)));
+            .Select(number =>
+                new GenerateResponse(number, GetResult(number, request.Input1, request.Input2)))
+            .ToList();
 
-        return Task.FromResult(sample);
+        var filtered = sample.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+        return Task.FromResult(new PagedResponse<GenerateResponse>
+        {
+            Items = filtered,
+            Page = page,
+            PageSize = pageSize,
+            TotalItems = sample.Count,
+            TotalPages = (int)Math.Ceiling(sample.Count / (double)pageSize)
+        });
     }
 
-    public static GenerateResultType GetResult(int number, int input1, int input2)
+    private static GenerateResultType GetResult(int number, int input1, int input2)
     {
         var dividedByInput1 = number % input1 == 0;
         var dividedByInput2 = number % input2 == 0;
