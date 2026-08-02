@@ -4,7 +4,7 @@ using GenerateService.Domain.Enums;
 
 namespace GenerateService.Application.Services;
 
-public sealed class GenerateService : IGenerateService
+public sealed class GenerateSample : IGenerateSample
 {
     public Task<PagedResponse<GenerateResponse>> GenerateSampleSize(GenerateRequest request, int page, int pageSize)
     {
