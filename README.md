@@ -20,7 +20,7 @@ Backend will be created using Clean Architecture for clear separation of concern
 I will work in the following estructure:
 
 ```bash
-
+|-src
     |-Api
     |---Auth
     |---Generate
@@ -35,13 +35,15 @@ I will work in the following estructure:
     |---Security
     |-----Authentication
     |-----Configuration
-
+|-tests
+|--Services
+|--Validators
 ```
 
 ### Frontend
 
 Frontend will be created using domain estructure for clear separation of concerns. This allow use working on specific feature/domain without affects others.
-For now, I just only consider the following stack
+First I decided make it simple, but went I was working on it I decided on the fly add more libs
 
 ***Tech Stack***
 - Vite 
@@ -49,6 +51,12 @@ For now, I just only consider the following stack
 - Tanstack
 - Zod
 - Zustand
-- TanStack query/route
+- TanStack query/router/plugin
+- React Hook form
+- Hook forms
+- tailwindcss
+- pnpm as package manager
 
 
+## LICENSE
+MIT
