@@ -1,4 +1,5 @@
 using GenerateService.Application.DTOs;
+using GenerateService.Application.Extensions;
 using GenerateService.Application.Ports;
 using GenerateService.Domain.Enums;
 
@@ -6,23 +7,14 @@ namespace GenerateService.Application.Services;
 
 public sealed class GenerateSample : IGenerateSample
 {
-    public Task<PagedResponse<GenerateResponse>> GenerateSampleSize(GenerateRequest request, int page, int pageSize)
+    public Task<PagedResponse> GenerateSampleSize(GenerateRequest request, int page, int pageSize)
     {
         var sample = Enumerable.Range(0, request.SampleSize + 1)
             .Select(number =>
                 new GenerateResponse(number, GetResult(number, request.Input1, request.Input2)))
             .ToList();
 
-        var filtered = sample.Skip((page - 1) * pageSize).Take(pageSize).ToList();
-
-        return Task.FromResult(new PagedResponse<GenerateResponse>
-        {
-            Items = filtered,
-            Page = page,
-            PageSize = pageSize,
-            TotalItems = sample.Count,
-            TotalPages = (int)Math.Ceiling(sample.Count / (double)pageSize)
-        });
+        return Task.FromResult(sample.ToPagedResponse(page, pageSize));
     }
 
     private static GenerateResultType GetResult(int number, int input1, int input2)
