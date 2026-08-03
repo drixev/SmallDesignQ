@@ -8,6 +8,18 @@ To complete the task I decided use a MonoRepo for both, backend and frontend pro
 
 Each project has its own design. I would explain them as follow:
 
+
+**Fake credentials**
+[check here](backend/src/GenerateService.Api/GenerateService.Api.http)
+
+```bash
+# request Auth
+username: anything # write whatever you want
+password: FakeAdmin # just tests, 
+
+```
+
+
 ### Backend
 
 Backend will be created using Clean Architecture for clear separation of concerns. This allow us create or add more domains. I'm just thinking as scalable software.
