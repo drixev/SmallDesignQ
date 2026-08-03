@@ -40,6 +40,15 @@ I will work in the following estructure:
 |--Validators
 ```
 
+**Run**
+```bash
+## run the backend
+dotnet run
+
+## run he tests
+dotnet test
+```
+
 ### Frontend
 
 Frontend will be created using domain estructure for clear separation of concerns. This allow use working on specific feature/domain without affects others.
@@ -57,6 +66,14 @@ First I decided make it simple, but went I was working on it I decided on the fl
 - tailwindcss
 - pnpm as package manager
 
+
+**Run**
+```bash
+## install dependencies
+pnpm install
+## run the backend
+pnpm run dev
+```
 
 ## LICENSE
 MIT
