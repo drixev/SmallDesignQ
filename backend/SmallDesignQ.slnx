@@ -3,5 +3,9 @@
     <Project Path="src/GenerateService.Api/GenerateService.Api.csproj" />
     <Project Path="src/GenerateService.Application/GenerateService.Application.csproj" />
     <Project Path="src/GenerateService.Domain/GenerateService.Domain.csproj" />
+    <Project Path="src/GenerateService.Infraestructure/GenerateService.Infraestructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/GenerateService.Tests/GenerateService.Tests.csproj" />
   </Folder>
 </Solution>
