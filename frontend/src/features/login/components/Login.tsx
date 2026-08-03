@@ -36,7 +36,7 @@ export const Login = () => {
             <p className="text-sm text-red-500">{errors.username.message}</p>
           )}
 
-          <Input placeholder="Password" {...register("password")} />
+          <Input placeholder="Password" {...register("password")} type="password" />
           {errors.password && (
             <p className="text-sm text-red-500">{errors.password.message}</p>
           )}
