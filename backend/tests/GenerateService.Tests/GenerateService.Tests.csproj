@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\GenerateService.Application\GenerateService.Application.csproj" />
+    <ProjectReference Include="..\..\src\GenerateService.Domain\GenerateService.Domain.csproj" />
   </ItemGroup>
 
 </Project>

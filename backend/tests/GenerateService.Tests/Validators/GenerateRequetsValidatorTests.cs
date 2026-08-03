@@ -1,10 +1,10 @@
 // Arrange / Act/ Assert
 
-using Challenge.Application.DTOs;
-using Challenge.Application.Validators;
+using GenerateService.Application.DTOs;
+using GenerateService.Application.Validators;
 using FluentValidation.TestHelper;
 
-namespace Challenge.Tests.Validators;
+namespace GenerateService.Tests.Validators;
 
 public class GenerateRequestValidatorTests
 {

@@ -1,7 +1,7 @@
 using FluentValidation;
 using GenerateService.Application.DTOs;
 
-namespace Challenge.Application.Validators;
+namespace GenerateService.Application.Validators;
 
 public sealed class GenerateRequestValidator : AbstractValidator<GenerateRequest>
 {
