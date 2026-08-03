@@ -22,12 +22,12 @@ public class GenerateServiceTests
         // Assert
         var expectedItems = new[]
         {
-            new GenerateResponse(0, GenerateResultType.Unknown), // divisible by both
-            new GenerateResponse(1, GenerateResultType.IDontKnow),           // divisible by neither
+            new GenerateResponse(0, GenerateResultType.IDontKnow), // divisible by both
+            new GenerateResponse(1, GenerateResultType.Unknown),           // divisible by neither
             new GenerateResponse(2, GenerateResultType.Yes),           // divisible by Input1 only
             new GenerateResponse(3, GenerateResultType.No),            // divisible by Input2 only
             new GenerateResponse(4, GenerateResultType.Yes),
-            new GenerateResponse(5, GenerateResultType.IDontKnow),
+            new GenerateResponse(5, GenerateResultType.Unknown),
         };
         Assert.Equal(expectedItems, result.Items);
 

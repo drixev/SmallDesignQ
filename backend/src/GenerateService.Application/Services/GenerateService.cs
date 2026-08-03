@@ -34,7 +34,7 @@ public sealed class GenerateSample : IGenerateSample
         {
             (true, false) => GenerateResultType.Yes,
             (false, true) => GenerateResultType.No,
-            (false, false) => GenerateResultType.IDontKnow,
+            (true, true) => GenerateResultType.IDontKnow,
             _ => GenerateResultType.Unknown
         };
 
