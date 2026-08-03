@@ -1,6 +1,7 @@
 using GenerateService.Api.Extensions;
 using GenerateService.Application;
 using GenerateService.Infraestructure;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,11 @@ builder.Services.AddInfraestructure();
 var app = builder.Build();
 
 app.UseHttpsRedirection();
+
+app.UseCors((opt) =>
+{
+    opt.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod();
+});
 
 app.UseAuthentication();
 app.UseAuthorization();
