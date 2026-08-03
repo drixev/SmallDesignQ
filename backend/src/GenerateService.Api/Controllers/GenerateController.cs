@@ -1,11 +1,13 @@
 using GenerateService.Application.DTOs;
 using GenerateService.Application.Ports;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GenerateService.Api.Controllers;
 
 [ApiController]
 [Route("api/generate")]
+[Authorize]
 public class GenerateController : ControllerBase
 {
     private readonly IGenerateSample _generateSample;

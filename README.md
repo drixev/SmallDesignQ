@@ -33,6 +33,8 @@ I will work in the following estructure:
     |---SampleSizeEntity
     |-Infraestructure
     |---Security
+    |-----Authentication
+    |-----Configuration
 
 ```
 
